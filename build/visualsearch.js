@@ -515,9 +515,10 @@ VS.ui.SearchFacet = Backbone.View.extend({
     };
 
 	//Get all facet options
-	var retVal = VS.options.callbacks.facetMatches(function(facets){
-		return facets;
-	});
+	var retVal;
+    this.options.app.options.callbacks.facetMatches(function(facets){
+        retVal =  facets;
+    });
 
 	//Should this facet have a jQuery UI Datepicker?
 	for(i=0; i < retVal.length; i++){
